@@ -1,0 +1,30 @@
+<h2>User Posts</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let post of editedPosts; let i = index">
+            <td>
+                <input type="text" [(ngModel)]="myValue" *ngIf="editingIndex === i; else displayTitle">
+                <ng-template #displayTitle>{{ post.title }}</ng-template>
+            </td>
+        </tr>
+    </tbody>
+</table> 
+
+
+ {{editedPosts | json}}
+    {{log()}}
+
+
+    <!-- <br> -->
+    <!-- -------------------------------------- !-->
+
+<!-- <div class="child-container">
+        <h3> Child Object component </h3>
+        
+        <pre>{{person | json}}</pre>
+</div>  -->
